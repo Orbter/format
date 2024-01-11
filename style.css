@@ -5,6 +5,8 @@
 :root {
   --text_color: white;
   --firtpage-backroundcolor: #153a62;
+  --form_color: #102336;
+  --button_color: #41a8f3;
 }
 .flex {
   display: flex;
@@ -14,7 +16,7 @@ body {
   font-size: 16px;
   color: var(--text_color);
 }
-.img-conteinar {
+.img-container {
   display: flex;
   flex-direction: column; /* Stacks children vertically */
   align-items: stretch; /* Allows children to stretch full width */
@@ -24,7 +26,7 @@ body {
   justify-content: space-between;
 }
 
-.logo-conteinar {
+.logo-container {
   display: flex;
   justify-content: flex-start; /* Aligns content to the left */
   padding: 20px;
@@ -42,24 +44,78 @@ body {
   font-size: 1.2rem;
   gap: 30px;
 }
-.arrow-down {
-  width: 50px;
-  height: 50px;
-  background-color: var(--firtpage-backroundcolor);
-  margin: 0;
-}
+
+
 .go-down {
-  border: 0;
-  margin: 0;
+  background-color: var(--firtpage-backroundcolor);
   width: 50px;
   height: 50px;
   cursor: pointer;
+  animation: upAndDown 0.8s infinite alternate; /* Apply the animation */
+  border: 0px;
 }
-.secound-page{
+
+.arrow-down {
+  width: 100%;
+  height: 100%;
+}
+
+/* Define the animation keyframes */
+@keyframes upAndDown {
+  0% {
+    transform: translateY(0); /* Start position */
+  }
+  100% {
+    transform: translateY(80%); /* End position */
+  }
+}
+
+
+.second-page{
   flex-direction: column;
   height: 100vh;
   background-color: #0d1b2a;
 }
 .format{
   flex-direction: column;
+  padding: 20px;
+  height: 90%;
+  gap: 50px;
+  align-items: center;
+}
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+input{
+  border-radius: 5px;
+  height: 50px;
+  width: 70%;
+  font-size: 1.4rem;
+  background-color: var(--form_color);
+  border: 0;
+  color: white;
+  box-shadow: 2px 4px 6px rgba(255, 237, 237, 0.1); /* Add box shadow */
+
+}
+
+
+label{
+  font-size: 1.6rem;
+}
+.second-h1{
+  font-size: large;
+  justify-content: center;
+  padding: 20px;
+  padding-bottom: 40px;
+}
+
+.sign-up{
+  width: 200px;
+  height: 50px;
+  border-radius: 20px;
+  background-color: var(--button_color);
+  border: 0;
+  box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.1); /* Add box shadow */
 }

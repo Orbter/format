@@ -4,15 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
     <title>Document</title>
   </head>
   <body>
-    <div class="img-conteinar flex">
-      <div class="logo-conteinar flex"><h1>Orbter.net</h1></div>
+    <div class="img-container flex">
+      <div class="logo-container flex"><h1>Orbter.net</h1></div>
 
       <img src="images/signup.png" alt="sign up photo" id="sign-up-img" />
       <div class="firstpage_footer flex">
         <h1>sign up here</h1>
+
         <button class="go-down">
           <img
             class="arrow-down"
@@ -20,24 +22,31 @@
             alt="arrow down"
           />
         </button>
+
       </div>
     </div>
-    <div class="secound-page flex">
-    <div><h1>Join Us!</h1></div>
+    <div class="second-page flex">
+    <div class="second-h1 flex"><h1>Join Us!</h1></div>
     <form action="example.com/path" method="get" class="format flex">
-      <label for="first_name">First Name</label>
-      <input type="text" id="first_name">
-      <label for="last_name">Last Name</label>
-      <input type="text" id="last_name">
-      <label for="user_email">E-MAIL</label>
-      <input type="email" id="user_email">
-      <label for="phone_number">Phone</label>
-      <input type="number" id="phone_number">
-      <label for="user_password">Password</label>
-      <input type="text" id="user_password">
-      <label for="confirm_password">Confirm Password</label>
-      <input type="text" id="confirm_password">
-      <button type="submit">Sign Up!</button>
+      <div class="form-container">      <label for="first_name"></label>
+        <input type="text" id="first_name" placeholder="First Name"></div>
+      <div class="form-container">      <label for="last_name"></label>
+        <input type="text" id="last_name" placeholder="Last Name"></div>
+      <div class="form-container">
+        <label for="user_email"></label>
+        <input type="email" id="user_email" placeholder="E-MAIL"></div>
+      <div class="form-container">
+        <label for="phone_number"></label>
+        <input type="number" id="phone_number" placeholder="Phone"></div>
+      <div class="form-container">
+        <label for="user_password"></label>
+        <input type="password" id="user_password" placeholder="Password"></div>
+      <div class="form-container">      
+        <label for="confirm_password"></label>
+        <input type="password" id="confirm_password" placeholder="Confirm Password"></div>
+
+        <div class="button-container"> <button class="sign-up" type="submit">Sign Up!</button>
+        </div>
     </form>
   </div>
   </body>
