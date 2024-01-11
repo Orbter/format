@@ -55,3 +55,11 @@ body {
   height: 50px;
   cursor: pointer;
 }
+.secound-page{
+  flex-direction: column;
+  height: 100vh;
+  background-color: #0d1b2a;
+}
+.format{
+  flex-direction: column;
+}
