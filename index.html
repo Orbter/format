@@ -22,32 +22,80 @@
             alt="arrow down"
           />
         </button>
-
       </div>
     </div>
     <div class="second-page flex">
-    <div class="second-h1 flex"><h1>Join Us!</h1></div>
-    <form action="example.com/path" method="get" class="format flex">
-      <div class="form-container">      <label for="first_name"></label>
-        <input type="text" id="first_name" placeholder="First Name"></div>
-      <div class="form-container">      <label for="last_name"></label>
-        <input type="text" id="last_name" placeholder="Last Name"></div>
-      <div class="form-container">
-        <label for="user_email"></label>
-        <input type="email" id="user_email" placeholder="E-MAIL"></div>
-      <div class="form-container">
-        <label for="phone_number"></label>
-        <input type="number" id="phone_number" placeholder="Phone"></div>
-      <div class="form-container">
-        <label for="user_password"></label>
-        <input type="password" id="user_password" placeholder="Password"></div>
-      <div class="form-container">      
-        <label for="confirm_password"></label>
-        <input type="password" id="confirm_password" placeholder="Confirm Password"></div>
-
-        <div class="button-container"> <button class="sign-up" type="submit">Sign Up!</button>
+      <div class="second-h1 flex"><h1>Join Us!</h1></div>
+      <form action="example.com/path" method="get" class="format flex">
+        <div class="form-container">
+          <label for="first_name"></label>
+          <input
+            type="text"
+            id="first_name"
+            name="first_name"
+            pattern="[A-Za-z\s]+"
+            title="Please enter letters only."
+            required
+          />
+          <span>First Name</span>
         </div>
-    </form>
-  </div>
+        <div class="form-container">
+          <label for="last_name"></label>
+          <input
+            type="text"
+            id="last_name"
+            name="last_name"
+            pattern="[A-Za-z\s]+"
+            title="Please enter letters only."
+            required
+          />
+          <span>Last Name</span>
+        </div>
+        <div class="form-container">
+          <label for="user_email"></label>
+          <input type="email" id="user_email" name="user_email" required />
+          <span>E-MAIL</span>
+        </div>
+        <div class="form-container">
+          <label for="phone_number"></label>
+          <input
+            type="tel"
+            id="phone_number"
+            name="phone_number"
+            pattern="\d{10}"
+            maxlength="10"
+            inputmode="numeric"
+            title="Phone number must be 10 digits"
+            required
+          />
+          <span>Phone</span>
+        </div>
+        <div class="form-container">
+          <label for="user_password"></label>
+          <input
+            type="password"
+            id="user_password"
+            name="user_password"
+            required
+          />
+          <span>Password</span>
+        </div>
+        <div class="form-container">
+          <label for="confirm_password"></label>
+          <span></span>
+          <input
+            type="password"
+            id="confirm_password"
+            name="confirm_password"
+            required
+          />
+          <span>Confirm password</span>
+        </div>
+
+        <div class="button-container">
+          <button class="sign-up" type="submit">Sign Up!</button>
+        </div>
+      </form>
+    </div>
   </body>
 </html>

@@ -7,6 +7,8 @@
   --firtpage-backroundcolor: #153a62;
   --form_color: #102336;
   --button_color: #41a8f3;
+  --span_color: rgba(255, 255, 255, 0.25);
+  --secound_page_bacround: #0d1b2a;
 }
 .flex {
   display: flex;
@@ -45,7 +47,6 @@ body {
   gap: 30px;
 }
 
-
 .go-down {
   background-color: var(--firtpage-backroundcolor);
   width: 50px;
@@ -70,25 +71,26 @@ body {
   }
 }
 
-
-.second-page{
+.second-page {
   flex-direction: column;
   height: 100vh;
   background-color: #0d1b2a;
+  align-items: center;
 }
-.format{
+.format {
   flex-direction: column;
   padding: 20px;
   height: 90%;
   gap: 50px;
   align-items: center;
+  width: 200px;
 }
 .form-container {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-input{
+input {
   border-radius: 5px;
   height: 50px;
   width: 70%;
@@ -97,25 +99,46 @@ input{
   border: 0;
   color: white;
   box-shadow: 2px 4px 6px rgba(255, 237, 237, 0.1); /* Add box shadow */
-
 }
 
-
-label{
+label {
   font-size: 1.6rem;
 }
-.second-h1{
+.second-h1 {
   font-size: large;
   justify-content: center;
   padding: 20px;
   padding-bottom: 40px;
 }
 
-.sign-up{
+.sign-up {
   width: 200px;
   height: 50px;
   border-radius: 20px;
   background-color: var(--button_color);
   border: 0;
   box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.1); /* Add box shadow */
+}
+.form-container span {
+  position: absolute;
+  left: 107px;
+  padding-top: 15px;
+  font-size: 1rem;
+  color: var(--span_color);
+  pointer-events: none;
+  text-transform: uppercase;
+}
+.form-container,
+input {
+  box-sizing: border-box;
+  width: 200px; /* or a fixed pixel value */
+}
+input:valid ~ span {
+  color: aqua;
+  transform: translateX(10px) translateY(-5px);
+  font-size: 0.7rem;
+  padding: 0 10px;
+  background-color: rgb(0, 126, 225);
+  color: white;
+  border-radius: 2px;
 }
