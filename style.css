@@ -229,7 +229,7 @@ input.success + span {
 
   .form-container span {
     position: absolute;
-    left: 4px;
+    left: -30px;
     top: 0px;
     font-size: 1.3rem;
   }
@@ -238,19 +238,19 @@ input.success + span {
     flex-direction: column;
     padding-top: 40px;
     height: 100%;
-    gap: 60px;
+    gap: 70px;
     align-items: center;
     width: 200px;
   }
   input {
     box-sizing: border-box;
-    width: 220px; /* or a fixed pixel value */
+    width: 280px; /* or a fixed pixel value */
     transition: 0.2s;
     height: 60px;
     border: 3px;
   }
   #confirm span {
-    top: -15px;
+    top: 0px;
   }
   .sign-up {
     width: 400px;
@@ -266,5 +266,14 @@ input.success + span {
   }
   .firstpage_footer {
     font-size: 1.5rem;
+  }
+  small {
+    position: absolute;
+    left: 1px;
+    margin-top: 65px;
+    margin-left: -30px;
+    font-size: 1.2rem;
+    color: var(--error_color);
+    visibility: hidden;
   }
 }
