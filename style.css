@@ -19,6 +19,7 @@ body {
   height: 100vh;
   font-size: 16px;
   color: var(--text_color);
+  font-family: Poppins, sans-serif;
 }
 .img-container {
   display: flex;
@@ -188,5 +189,82 @@ input.success {
 input.success + span {
   background-color: var(--success_color);
 }
-input:invalid:not(:placeholder-shown) + .lable {
+
+@media screen and (min-width: 430px) {
+  body {
+    display: flex;
+  }
+  .img-container {
+    height: 100vh;
+    display: flex;
+    width: 50%;
+  }
+  .second-page {
+    height: 100vh;
+    width: 50%;
+  }
+  .arrow-down {
+    visibility: hidden;
+  }
+  .go-down {
+    visibility: hidden;
+  }
+  #sign-up-img {
+    width: 100%;
+  }
+  .second-h1 {
+    font-size: 1.5rem;
+  }
+  .logo-container {
+    display: flex;
+    justify-content: center; /* Aligns content to the left */
+    padding: 20px;
+    padding-top: 50px;
+    font-size: 1.5rem;
+  }
+  .form-container {
+    position: relative; /* Ensure parent container is positioned relatively */
+    /* Ensure each form container has the same width, padding, etc. */
+  }
+
+  .form-container span {
+    position: absolute;
+    left: 4px;
+    top: 0px;
+    font-size: 1.3rem;
+  }
+  .format {
+    display: flex;
+    flex-direction: column;
+    padding-top: 40px;
+    height: 100%;
+    gap: 60px;
+    align-items: center;
+    width: 200px;
+  }
+  input {
+    box-sizing: border-box;
+    width: 220px; /* or a fixed pixel value */
+    transition: 0.2s;
+    height: 60px;
+    border: 3px;
+  }
+  #confirm span {
+    top: -15px;
+  }
+  .sign-up {
+    width: 400px;
+    height: 75px;
+    border-radius: 20px;
+    font-size: 2.3rem;
+    font-weight: 500;
+    font-family: Poppins, sans-serif;
+
+    background-color: var(--button_color);
+    border: 0;
+    box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.1); /* Add box shadow */
+  }
+  .firstpage_footer {
+    font-size: 1.5rem;
+  }
 }
