@@ -49,21 +49,15 @@ function checkInputs() {
   const confirmPasswordValue = confirmPassword.value.trim();
   if (isNumber.test(firstNameValue)) {
     setErrorFor(firstName, "Name cannot have a number in it");
-  } else {
-    setSuccessFor(firstName);
-  }
-  if (firstNameValue === "") {
+  } else if (firstNameValue === "") {
     setErrorFor(firstName, "you need to fill your name");
   } else {
     setSuccessFor(firstName);
   }
-  if (lastNameValue === "") {
-    setErrorFor(lastName, "you need to fill your name");
-  } else {
-    setSuccessFor(lastName);
-  }
   if (isNumber.test(lastNameValue)) {
     setErrorFor(lastName, "Name cannot have a number in it");
+  } else if (lastNameValue === "") {
+    setErrorFor(lastName, "you need to fill your name");
   } else {
     setSuccessFor(lastName);
   }
