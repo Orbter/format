@@ -52,6 +52,16 @@ function checkInputs() {
   } else {
     setSuccessFor(firstName);
   }
+  if (firstNameValue === "") {
+    setErrorFor(firstName, "you need to fill your name");
+  } else {
+    setSuccessFor(firstName);
+  }
+  if (lastNameValue === "") {
+    setErrorFor(lastName, "you need to fill your name");
+  } else {
+    setSuccessFor(lastName);
+  }
   if (isNumber.test(lastNameValue)) {
     setErrorFor(lastName, "Name cannot have a number in it");
   } else {
@@ -61,6 +71,16 @@ function checkInputs() {
     setErrorFor(userEmail, "email is not valid");
   } else {
     setSuccessFor(userEmail);
+  }
+  if (phoneNumberValue === "") {
+    setErrorFor(phoneNumber, "you need to fill your phone");
+  } else {
+    setSuccessFor(phoneNumber);
+  }
+  if (userPasswordValue === "") {
+    setErrorFor(UserPassword, "you need to fill your password");
+  } else {
+    setSuccessFor(UserPassword);
   }
   if (userPasswordValue !== confirmPasswordValue) {
     setErrorFor(confirmPassword, "password are not the same");
@@ -93,11 +113,8 @@ function isEmail(email) {
   const emailPattern = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
   return emailPattern.test(email);
 }
-// Function to handle keydown event
 function handleKeydown(event) {
-  // Check if the key pressed is 'Delete' or 'Backspace'
   if (event.key === "Delete" || event.key === "Backspace") {
-    // Use setTimeout to allow the input value to update before checking its length
     setTimeout(() => {
       if (event.target.value.length < 1) {
         clearClasses(event.target);
@@ -106,7 +123,6 @@ function handleKeydown(event) {
   }
 }
 
-// Attach the event listener to each input field
 firstName.addEventListener("keydown", handleKeydown);
 lastName.addEventListener("keydown", handleKeydown);
 userEmail.addEventListener("keydown", handleKeydown);
@@ -115,5 +131,5 @@ UserPassword.addEventListener("keydown", handleKeydown);
 confirmPassword.addEventListener("keydown", handleKeydown);
 
 function clearClasses(input) {
-  input.className = ""; // Remove all classes from the input
+  input.className = "";
 }
