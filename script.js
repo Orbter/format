@@ -46,14 +46,28 @@ function checkInputs() {
   const userEmailValue = userEmail.value.trim();
   const phoneNumberValue = phoneNumber.value.trim();
   const userPasswordValue = UserPassword.value.trim();
-  const onfirmPasswordValue = confirmPassword.value.trim();
+  const confirmPasswordValue = confirmPassword.value.trim();
   if (isNumber.test(firstNameValue)) {
     setErrorFor(firstName, "Name cannot have a number in it");
   } else {
     setSuccessFor(firstName);
   }
+  if (isNumber.test(lastNameValue)) {
+    setErrorFor(lastName, "Name cannot have a number in it");
+  } else {
+    setSuccessFor(lastName);
+  }
+  if (!isEmail(userEmailValue)) {
+    setErrorFor(userEmail, "email is not valid");
+  } else {
+    setSuccessFor(userEmail);
+  }
+  if (userPasswordValue !== confirmPasswordValue) {
+    setErrorFor(confirmPassword, "password are not the same");
+  } else {
+    setSuccessFor(confirmPassword);
+  }
 }
-console.log("Form element:", form);
 
 if (form) {
   form.addEventListener("submit", (e) => {
@@ -74,4 +88,32 @@ function setErrorFor(input, message) {
 
 function setSuccessFor(input) {
   input.className = "succeess";
+}
+function isEmail(email) {
+  const emailPattern = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+  return emailPattern.test(email);
+}
+// Function to handle keydown event
+function handleKeydown(event) {
+  // Check if the key pressed is 'Delete' or 'Backspace'
+  if (event.key === "Delete" || event.key === "Backspace") {
+    // Use setTimeout to allow the input value to update before checking its length
+    setTimeout(() => {
+      if (event.target.value.length < 1) {
+        clearClasses(event.target);
+      }
+    }, 0);
+  }
+}
+
+// Attach the event listener to each input field
+firstName.addEventListener("keydown", handleKeydown);
+lastName.addEventListener("keydown", handleKeydown);
+userEmail.addEventListener("keydown", handleKeydown);
+phoneNumber.addEventListener("keydown", handleKeydown);
+UserPassword.addEventListener("keydown", handleKeydown);
+confirmPassword.addEventListener("keydown", handleKeydown);
+
+function clearClasses(input) {
+  input.className = ""; // Remove all classes from the input
 }

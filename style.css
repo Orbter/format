@@ -137,7 +137,7 @@ input {
   transition: 0.2s;
   border: 3px;
 }
-input:focus ~ span {
+input:valid ~ span {
   color: aqua;
   transform: translateX(10px) translateY(-5px);
   font-size: 0.7rem;
@@ -148,17 +148,20 @@ input:focus ~ span {
   letter-spacing: 0.1em;
   transition: 0.5s; /* Apply the transition to input elements */
 }
-
-input:focus {
-  outline: none; /* Removes the default browser outline */
-  border: 3px solid var(--success_color); /* Your custom focus style */
+input:valid {
+  outline: none;
+  border: 3px solid var(--success_color);
+}
+input:invalid {
+  outline: none;
+  border: 1px solid #ccc; /* Change this to your default border style */
 }
 
 small {
   position: absolute;
   left: 1px;
-  padding-top: 65px;
-  padding-left: 110px;
+  margin-top: 65px;
+  margin-left: 110px;
   font-size: 1.2rem;
   color: var(--error_color);
   visibility: hidden;
@@ -183,4 +186,6 @@ input.success {
 
 input.success + span {
   background-color: var(--success_color);
+}
+input:invalid:not(:placeholder-shown) + .lable {
 }
