@@ -9,6 +9,8 @@
   --button_color: #41a8f3;
   --span_color: rgba(255, 255, 255, 0.25);
   --secound_page_bacround: #0d1b2a;
+  --error_color: #ee4b2b;
+  --success_color: #00dfc4;
 }
 .flex {
   display: flex;
@@ -121,7 +123,7 @@ label {
 }
 .form-container span {
   position: absolute;
-  left: 107px;
+  left: 115px;
   padding-top: 15px;
   font-size: 1rem;
   color: var(--span_color);
@@ -133,8 +135,9 @@ input {
   box-sizing: border-box;
   width: 200px; /* or a fixed pixel value */
   transition: 0.2s;
+  border: 3px;
 }
-input:valid ~ span {
+input:focus ~ span {
   color: aqua;
   transform: translateX(10px) translateY(-5px);
   font-size: 0.7rem;
@@ -145,7 +148,39 @@ input:valid ~ span {
   letter-spacing: 0.1em;
   transition: 0.5s; /* Apply the transition to input elements */
 }
+
 input:focus {
   outline: none; /* Removes the default browser outline */
-  border: 3px solid #00dfc4; /* Your custom focus style */
+  border: 3px solid var(--success_color); /* Your custom focus style */
+}
+
+small {
+  position: absolute;
+  left: 1px;
+  padding-top: 65px;
+  padding-left: 110px;
+  font-size: 1.2rem;
+  color: var(--error_color);
+  visibility: hidden;
+}
+input.error {
+  border-color: var(--error_color); /* Highlight the border in error color */
+  /* Add any other styling you want for error inputs */
+}
+
+input.error + span {
+  background-color: var(--error_color);
+}
+
+input.error ~ small {
+  visibility: visible; /* Show the error message */
+  color: var(--error_color);
+}
+input.success {
+  border-color: var(--success_color); /* Highlight the border in error color */
+  /* Add any other styling you want for error inputs */
+}
+
+input.success + span {
+  background-color: var(--success_color);
 }
