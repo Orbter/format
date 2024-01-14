@@ -197,6 +197,7 @@ input.success + span {
     height: 100vh;
     display: flex;
     width: 50%;
+    align-items: center;
   }
   .second-page {
     height: 100vh;
@@ -209,7 +210,8 @@ input.success + span {
     display: none;
   }
   #sign-up-img {
-    width: 100%;
+    width: 80%;
+    height: auto;
   }
   .second-h1 {
     font-size: 1.5rem;
