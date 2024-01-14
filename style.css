@@ -20,15 +20,24 @@ body {
   font-size: 16px;
   color: var(--text_color);
   font-family: Poppins, sans-serif;
+  transition: opacity 1.5 ease-in-out; /* Add the transition property with timing function */
 }
+
+.img-container.fade-in,
+.second-page.fade-in {
+  opacity: 0; /* Set initial opacity to 0 for elements with the fade-in class */
+  transition: opacity 1.5s ease-in-out; /* Add the transition property with timing function */
+}
+
 .img-container {
   display: flex;
-  flex-direction: column; /* Stacks children vertically */
-  align-items: stretch; /* Allows children to stretch full width */
+  flex-direction: column;
+  align-items: stretch;
   width: 100%;
   height: 100%;
   background-color: var(--firtpage-backroundcolor);
   justify-content: space-between;
+  transition: opacity 1.5s ease-in-out; /* Add the transition property with timing function */
 }
 
 .logo-container {
@@ -79,6 +88,7 @@ body {
   height: 100vh;
   background-color: #0d1b2a;
   align-items: center;
+  transition: opacity 1.5s ease-in-out; /* Add the transition property with timing function */
 }
 .format {
   flex-direction: column;

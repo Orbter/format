@@ -6,6 +6,8 @@ const lastName = document.getElementById("last_name");
 const userEmail = document.getElementById("user_email");
 const UserPassword = document.getElementById("user_password");
 const confirmPassword = document.getElementById("confirm_password");
+const firstPage = document.querySelector(".img-container");
+const secondPage = document.querySelector(".second-page");
 const isNumber = /\d/;
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -128,3 +130,15 @@ confirmPassword.addEventListener("keydown", handleKeydown);
 function clearClasses(input) {
   input.className = "";
 }
+document.addEventListener("DOMContentLoaded", function () {
+  const imgContainer = document.querySelector(".img-container.fade-in");
+  const secondPage = document.querySelector(".second-page.fade-in");
+
+  if (imgContainer) {
+    imgContainer.classList.remove("fade-in"); // Remove the fade-in class
+  }
+  console.log("amit");
+  if (secondPage) {
+    secondPage.classList.remove("fade-in"); // Remove the fade-in class
+  }
+});
