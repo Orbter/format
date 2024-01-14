@@ -48,14 +48,15 @@ function checkInputs() {
   const userPasswordValue = UserPassword.value.trim();
   const confirmPasswordValue = confirmPassword.value.trim();
   if (isNumber.test(firstNameValue)) {
-    setErrorFor(firstName, "Name cannot have a number in it");
+    setErrorFor(firstName, "Name cannot have a number");
   } else if (firstNameValue === "") {
     setErrorFor(firstName, "you need to fill your name");
   } else {
     setSuccessFor(firstName);
   }
+
   if (isNumber.test(lastNameValue)) {
-    setErrorFor(lastName, "Name cannot have a number in it");
+    setErrorFor(lastName, "Name cannot have a number");
   } else if (lastNameValue === "") {
     setErrorFor(lastName, "you need to fill your name");
   } else {
